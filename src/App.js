@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React from 'react'
 function App() {
+  const phrases = ['web app development','mobile app development','UI/UX design']
+  const [displayPhrase,setDisplayPhrase] = React.useState('')
+  for(var i=0;i<phrases.length;i++){
+    var sel = phrases[i]
+    for(var j=0;j<sel;j++){
+       (displayPhrase === phrases[i])?
+       setDisplayPhrase('')
+       :
+       setDisplayPhrase(...displayPhrase,sel[i])
+    }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={container}>
+      <div style={quote}>I'm Gokul , good in </div>
+      <div style={cursor}>{displayPhrase}</div>
     </div>
   );
+}
+
+const cursor = {
+  height:'25px',
+  width:'4px',
+  backgroundColor:'green',
+}
+
+
+const container = {
+  position:'absolute',
+}
+
+const quote={
+  position:'relative'
 }
 
 export default App;
