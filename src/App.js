@@ -16,12 +16,12 @@ function App() {
   return (
     <div style={container}>
       <div style={quote}>I'm Gokul , good in </div>
-      <div style={cursor}>{displayPhrase}</div>
+      <div style={cursorr}>{displayPhrase}</div>
     </div>
   );
 }
 
-const cursor = {
+const cursorr = {
   height:'25px',
   width:'4px',
   backgroundColor:'green',
